@@ -1,7 +1,7 @@
 # All reads no writes
 
 recordcount=1000
-operationcount=1000
+operationcount=100000
 workload=com.yahoo.ycsb.workloads.CoreWorkload
 
 readallfields=true
@@ -13,5 +13,4 @@ insertproportion=0
 
 insertorder=ordered
 
-requestdistribution=zipfian
-
+requestdistribution=latest
