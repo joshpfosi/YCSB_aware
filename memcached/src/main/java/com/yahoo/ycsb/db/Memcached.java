@@ -36,17 +36,13 @@ public class Memcached extends com.yahoo.ycsb.DB
     Properties props = getProperties();
 
     int port = 8888, connsPerServer = 1, numThreads = 4;
-    String[] servers = {
-      "memcached0.dup.comp150.emulab.net",
-      "memcached1.dup.comp150.emulab.net",
-      "memcached2.dup.comp150.emulab.net",
-      "memcached3.dup.comp150.emulab.net"
-    };
 
     String portString           = props.getProperty(PORT_PROPERTY);
     String serverString         = props.getProperty(SERVERS_PROPERTY);
     String connsPerServerString = props.getProperty(CONNS_PROPERTY);
     String numThreadsString     = props.getProperty(THREADS_PROPERTY);
+
+    String[] servers = serverString.split(" ");
 
     if (portString != null) {
       port = Integer.parseInt(portString);
